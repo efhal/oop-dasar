@@ -3,14 +3,18 @@
 class Produk
 {
 
-    public $judul = "Judul", $penulis = "Penulis", $harga = "harga", $penerbit = "penerbit";
+    public $judul = "Judul", $penulis = "Penulis";
+
+    public function __construct($judul, $penulis)
+    {
+        $this->judul = $judul;
+        $this->penulis = $penulis;
+    }
 
     public function get_label()
     {
-        return $this->judul.' '.$this->penerbit;
+        return $this->judul . ' ' . $this->penulis;
     }
 }
-$produk1 = new Produk();
-$produk1->judul = 'Naruto';
-print_r($produk1);
-print 'Label '.$produk1->get_label();
+$produk1 = new Produk('Naruto', 'Rifaldi Ardan');
+print $produk1->get_label();
