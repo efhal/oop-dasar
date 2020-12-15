@@ -16,5 +16,16 @@ class Produk
         return $this->judul . ' ' . $this->penulis;
     }
 }
-$produk1 = new Produk('Naruto', 'Rifaldi Ardan');
-print $produk1->get_label();
+
+class InfoProduk
+{
+
+    public function cetak_info(Produk $produk)
+    {
+        return "Judul : {$produk->judul} . {$produk->get_label()}";
+    }
+}
+
+$infoProduk = new InfoProduk();
+
+echo $infoProduk->cetak_info(new Produk('Naruto', 'Rifaldi Ardan'));
